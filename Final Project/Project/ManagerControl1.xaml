@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="Project.ManagerControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Project"
+             xmlns:materialDesign1="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+            Height="450" Width="600">
+    <Grid>
+        <ScrollBar HorizontalAlignment="Right">
+            
+        </ScrollBar>
+        <materialDesign1:TransitioningContent x:Name="TransitioningContentSlide" OpeningEffect="{materialDesign1:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Height="397">
+                <StackPanel Width="300">
+                    <StackPanel Margin="10">
+                        <TextBlock Text="List" FontSize="50" FontFamily="Gadugi" FontWeight="Bold" Foreground="#FF3C3C3C"/>
+                        <ListView  Margin="10" x:Name="lsDataBinding" ItemsSource="{Binding emps , Mode=TwoWay , UpdateSourceTrigger=PropertyChanged}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <WrapPanel>
+                                        <TextBlock Text="Name: " />
+                                        <TextBlock Text="{Binding Name}" FontWeight="Bold" />
+                                        <TextBlock Text=", " />
+                                        <TextBlock Text="Phone number: " />
+                                        <TextBlock Text="{Binding Phonenumber}" FontWeight="Bold" />
+             
+                                    </WrapPanel>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Width="auto" Height="auto" Margin="100 20 0 100">
+                    <StackPanel Orientation="Horizontal" Margin="0 20">
+                        <materialDesign1:PackIcon Foreground="#FF17326A" Kind="PersonAdd" Width="30" Height="30"/>
+                        <Button Content="Add an employee"  x:Name="AddPerson" Width="150" Height="30"  BorderBrush="{x:Null}" Padding="0" Foreground="#FF17326A" Background="{x:Null}" FontWeight="Bold" Click="AddPerson_Click"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 20">
+                        <materialDesign1:PackIcon Foreground="#FF17326A" Kind="PersonRemove" Width="30" Height="30"/>
+                        <Button Content="Remove an employee" x:Name="RemovePerson" Width="150" Height="30"  BorderBrush="{x:Null}" Padding="0" Foreground="#FF17326A" Background="{x:Null}"  FontWeight="Bold" Click="RemoveEmployee_Click" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 20">
+                        <materialDesign1:PackIcon Foreground="#FF17326A" Kind="Money100" Width="30" Height="30"/>
+                        <Button Content="Deposit of salaries" x:Name="DepositOfSalaries" Width="150" Height="30"  BorderBrush="{x:Null}" Padding="0" Foreground="#FF17326A" Background="{x:Null}"  FontWeight="Bold" Click="DepositOfSalaries_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </materialDesign1:TransitioningContent>
+    </Grid>
+</UserControl>
