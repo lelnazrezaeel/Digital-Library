@@ -1,5 +1,5 @@
 # Digital-Library
-Welcome to the Digital Library Management System repository. This project is developed using the WPF (Windows Presentation Foundation) framework and provides a comprehensive solution for managing a library's operations. The system caters to three distinct user roles: administrators, employees, and members. Here's an overview of the access and functionalities for each type of user:
+This project is developed using the WPF (Windows Presentation Foundation) framework and provides a comprehensive solution for managing a library's operations. The system caters to three distinct user roles: administrators, employees, and members. Here's an overview of the access and functionalities for each type of user:
 
 ## <img width="20" height="20" src="https://img.icons8.com/windows/32/41b883/system-administrator-male.png" alt="system-administrator-male"/> Administrator Access
 Administrators have default login credentials and can perform the following actions after logging in:
